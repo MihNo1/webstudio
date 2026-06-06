@@ -3,15 +3,13 @@
     <div class="hero-gradient" />
     <div class="hero-tag" v-reveal>
       <span class="pulse-dot" />
-      Разработка сайтов под ключ
+      {{ t('hero.tag') }}
     </div>
-    <h1 v-reveal="100">Сайты, которые<br/><em>работают на вас</em></h1>
-    <p class="hero-sub" v-reveal="200">
-      Создаём лендинги, корпоративные сайты и интернет-магазины<br/>с фокусом на конверсию и скорость.
-    </p>
+    <h1 v-reveal="100">{{ t('hero.h1') }}<br/><em>{{ t('hero.h1em') }}</em></h1>
+    <p class="hero-sub" v-reveal="200">{{ t('hero.sub') }}</p>
     <div class="hero-actions" v-reveal="300">
-      <button class="btn-primary" @click="openModal">Оставить заявку</button>
-      <a href="#portfolio" class="btn-secondary">Посмотреть работы</a>
+      <button class="btn-primary" @click="openModal">{{ t('hero.cta') }}</button>
+      <a href="#portfolio" class="btn-secondary">{{ t('hero.cta2') }}</a>
     </div>
     <div class="hero-visual" v-reveal="400">
       <div class="browser-frame">
@@ -35,7 +33,10 @@
 
 <script setup>
 import { useModal } from '../composables/useModal.js'
+import { useI18n } from '../i18n/index.js'
+
 const { openModal } = useModal()
+const { t } = useI18n()
 </script>
 
 <style scoped>
@@ -56,10 +57,7 @@ const { openModal } = useModal()
   color: var(--accent); font-size: 13px; font-weight: 500; letter-spacing: .3px;
   padding: 6px 14px; border-radius: 980px; margin-bottom: 32px; position: relative; z-index: 1;
 }
-.pulse-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
-  animation: pulse 2s infinite;
-}
+.pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
 
 h1 {
@@ -72,42 +70,22 @@ h1 em {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.hero-sub {
-  font-size: clamp(17px,2.5vw,22px); color: var(--muted); max-width: 600px;
-  margin: 0 auto 48px; line-height: 1.55; position: relative; z-index: 1;
-}
+.hero-sub { font-size: clamp(17px,2.5vw,22px); color: var(--muted); max-width: 620px; margin: 0 auto 48px; line-height: 1.55; position: relative; z-index: 1; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
 
 .hero-visual { position: relative; z-index: 1; margin-top: 72px; width: 100%; max-width: 960px; }
-.browser-frame {
-  background: #fff; border-radius: var(--radius-lg);
-  box-shadow: 0 40px 120px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.08);
-  overflow: hidden;
-}
-.browser-bar {
-  background: #f0f0f0; padding: 12px 16px; display: flex; align-items: center; gap: 8px;
-  border-bottom: 1px solid var(--border);
-}
+.browser-frame { background: #fff; border-radius: var(--radius-lg); box-shadow: 0 40px 120px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.08); overflow: hidden; }
+.browser-bar { background: #f0f0f0; padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
 .browser-dots { display: flex; gap: 6px; }
 .browser-dots span { width: 12px; height: 12px; border-radius: 50%; }
 .browser-dots span:nth-child(1) { background: #ff5f57; }
 .browser-dots span:nth-child(2) { background: #febc2e; }
 .browser-dots span:nth-child(3) { background: #28c840; }
-.browser-url {
-  flex: 1; background: #fff; border-radius: 6px; height: 28px;
-  margin: 0 12px; display: flex; align-items: center; padding: 0 12px;
-  font-size: 12px; color: var(--muted);
-}
-.browser-content {
-  background: linear-gradient(145deg, #f5f5f7, #e8e8ed);
-  height: 380px; display: flex; align-items: center; justify-content: center;
-}
+.browser-url { flex: 1; background: #fff; border-radius: 6px; height: 28px; margin: 0 12px; display: flex; align-items: center; padding: 0 12px; font-size: 12px; color: var(--muted); }
+.browser-content { background: linear-gradient(145deg,#f5f5f7,#e8e8ed); height: 380px; display: flex; align-items: center; justify-content: center; }
 .mock-content { width: 90%; display: flex; flex-direction: column; gap: 16px; padding: 32px; }
 .mock-nav { height: 44px; background: #fff; border-radius: 10px; opacity: .7; }
-.mock-hero-block {
-  height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, rgba(0,113,227,.15), rgba(191,90,242,.12));
-}
+.mock-hero-block { height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,rgba(0,113,227,.15),rgba(191,90,242,.12)); }
 .mock-hero-block span { font-family: var(--font-d); font-weight: 700; font-size: 22px; color: var(--text); opacity: .4; letter-spacing: -1px; }
 .mock-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .mock-card { height: 64px; background: #fff; border-radius: 10px; opacity: .6; }
