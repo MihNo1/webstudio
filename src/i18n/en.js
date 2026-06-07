@@ -28,7 +28,6 @@ export default {
     items: [
       { icon: '🚀', title: 'Landing Pages',      desc: 'Single-page websites with high conversion rates. Fast, beautiful, with a clear call to action.',   price: 'from $300' },
       { icon: '🏢', title: 'Corporate Websites', desc: 'Multi-page business websites with catalogues, forms and integrations.',                            price: 'from $800' },
-      { icon: '🛒', title: 'Online Stores',      desc: 'Full e-commerce solutions with cart, payment processing and product management.',                  price: 'from $1500' },
       { icon: '🎨', title: 'Redesign',           desc: 'We modernise outdated websites: fresh design, fast loading, mobile-first approach.',               price: 'from $400' },
       { icon: '📈', title: 'SEO Optimisation',   desc: 'Technical SEO, meta tags, site speed — for growth in search engines.',                            price: 'from $200' },
       { icon: '🔧', title: 'Maintenance',        desc: 'Updates, improvements and technical support for your website on an ongoing basis.',                price: 'from $100/mo' },
@@ -50,7 +49,6 @@ export default {
     sub: 'Examples of completed projects across different niches and goals.',
     items: [
       { title: 'Clinic Landing Page',           category: 'Healthcare', bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
-      { title: 'Fashion Online Store',           category: 'E-commerce', bg: 'linear-gradient(135deg,#0f3460,#533483)' },
       { title: 'Construction Company Website',   category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
       { title: 'Restaurant Website with Menu',   category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],
@@ -94,7 +92,7 @@ export default {
   footer: {
     tagline: 'We build websites that solve business problems. Fast, quality, with a guaranteed result.',
     columns: [
-      { title: 'Services', links: [{ label: 'Landing Pages', href: '#services' }, { label: 'Corporate Sites', href: '#services' }, { label: 'Online Stores', href: '#services' }, { label: 'Redesign', href: '#services' }, { label: 'SEO', href: '#services' }] },
+      { title: 'Services', links: [{ label: 'Landing Pages', href: '#services' }, { label: 'Corporate Sites', href: '#services' }, { label: 'Redesign', href: '#services' }, { label: 'SEO', href: '#services' }] },
       { title: 'Company',  links: [{ label: 'Portfolio', href: '#portfolio' }, { label: 'Reviews', href: '#reviews' }, { label: 'Pricing', href: '#pricing' }, { label: 'FAQ', href: '#faq' }] },
       { title: 'Contact',  links: [{ label: 'hello@webstudio.ru', href: 'mailto:hello@webstudio.ru' }, { label: '+7 (000) 000-00-00', href: 'tel:+70000000000' }, { label: 'Telegram', href: '#' }, { label: 'WhatsApp', href: '#' }] },
     ],
