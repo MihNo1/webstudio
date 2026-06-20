@@ -30,6 +30,7 @@ const projects = computed(() => tm('portfolio.items'))
 <style scoped>
 section { background: var(--bg); }
 .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 10px); margin: 0 auto; }
 .card { border-radius: var(--radius-lg); overflow: hidden; position: relative; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); transition: transform .3s, box-shadow .3s; cursor: pointer; }
 .card:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
 .placeholder { font-family: var(--font-d); font-size: 42px; font-weight: 800; opacity: .07; color: #fff; letter-spacing: -2px; }
