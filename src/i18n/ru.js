@@ -28,7 +28,6 @@ export default {
     items: [
       { icon: '🚀', title: 'Лендинги',            desc: 'Одностраничные сайты с высокой конверсией. Быстро, красиво, с чётким призывом к действию.',  price: 'от $300' },
       { icon: '🏢', title: 'Корпоративные сайты',  desc: 'Многостраничные сайты для бизнеса с каталогами, формами и интеграциями.',                    price: 'от $800' },
-      { icon: '🛒', title: 'Интернет-магазины',    desc: 'Полноценные e-commerce решения с корзиной, оплатой и управлением товарами.',                  price: 'от $1500' },
       { icon: '🎨', title: 'Редизайн',             desc: 'Обновляем устаревшие сайты: современный дизайн, быстрая загрузка, мобильная версия.',          price: 'от $400' },
       { icon: '📈', title: 'SEO-оптимизация',      desc: 'Техническое SEO, настройка метатегов, ускорение сайта — для роста в поисковиках.',             price: 'от $200' },
       { icon: '🔧', title: 'Поддержка',            desc: 'Обновления, доработки и техническая поддержка вашего сайта на постоянной основе.',             price: 'от $100/мес' },
@@ -50,7 +49,6 @@ export default {
     sub: 'Примеры реализованных проектов для разных ниш и задач.',
     items: [
       { title: 'Лендинг для клиники',        category: 'Медицина',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
-      { title: 'Интернет-магазин одежды',     category: 'E-commerce', bg: 'linear-gradient(135deg,#0f3460,#533483)' },
       { title: 'Сайт строительной компании',  category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
       { title: 'Ресторанный сайт с меню',     category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],
@@ -94,7 +92,7 @@ export default {
   footer: {
     tagline: 'Разрабатываем сайты, которые решают бизнес-задачи. Быстро, качественно, с гарантией результата.',
     columns: [
-      { title: 'Услуги',   links: [{ label: 'Лендинги', href: '#services' }, { label: 'Корпоративные сайты', href: '#services' }, { label: 'Интернет-магазины', href: '#services' }, { label: 'Редизайн', href: '#services' }, { label: 'SEO', href: '#services' }] },
+      { title: 'Услуги',   links: [{ label: 'Лендинги', href: '#services' }, { label: 'Корпоративные сайты', href: '#services' }, { label: 'Редизайн', href: '#services' }, { label: 'SEO', href: '#services' }] },
       { title: 'Компания', links: [{ label: 'Портфолио', href: '#portfolio' }, { label: 'Отзывы', href: '#reviews' }, { label: 'Цены', href: '#pricing' }, { label: 'FAQ', href: '#faq' }] },
       { title: 'Контакты', links: [{ label: 'hello@webstudio.ru', href: 'mailto:hello@webstudio.ru' }, { label: '+7 (000) 000-00-00', href: 'tel:+70000000000' }, { label: 'Telegram', href: '#' }, { label: 'WhatsApp', href: '#' }] },
     ],

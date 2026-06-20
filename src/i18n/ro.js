@@ -28,7 +28,6 @@ export default {
     items: [
       { icon: '🚀', title: 'Pagini de aterizare',   desc: 'Site-uri cu o singură pagină cu rată de conversie ridicată. Rapid, frumos, cu un îndemn clar.',       price: 'de la $300' },
       { icon: '🏢', title: 'Site-uri corporative',   desc: 'Site-uri multipagini pentru afaceri cu cataloage, formulare și integrări.',                           price: 'de la $800' },
-      { icon: '🛒', title: 'Magazine online',        desc: 'Soluții e-commerce complete cu coș, plăți și gestionarea produselor.',                                price: 'de la $1500' },
       { icon: '🎨', title: 'Redesign',               desc: 'Modernizăm site-urile învechite: design modern, încărcare rapidă, versiune mobilă.',                   price: 'de la $400' },
       { icon: '📈', title: 'Optimizare SEO',         desc: 'SEO tehnic, configurare metatag-uri, accelerarea site-ului — pentru creșterea în motoarele de căutare.', price: 'de la $200' },
       { icon: '🔧', title: 'Suport tehnic',          desc: 'Actualizări, îmbunătățiri și suport tehnic pentru site-ul dvs. pe bază permanentă.',                   price: 'de la $100/lună' },
@@ -50,7 +49,6 @@ export default {
     sub: 'Exemple de proiecte realizate pentru diferite nișe și obiective.',
     items: [
       { title: 'Pagină de aterizare clinică',  category: 'Medicină',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
-      { title: 'Magazin online de modă',        category: 'E-commerce', bg: 'linear-gradient(135deg,#0f3460,#533483)' },
       { title: 'Site companie de construcții',  category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
       { title: 'Site restaurant cu meniu',      category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],
@@ -94,7 +92,7 @@ export default {
   footer: {
     tagline: 'Creăm site-uri care rezolvă problemele de afaceri. Rapid, calitativ, cu rezultat garantat.',
     columns: [
-      { title: 'Servicii', links: [{ label: 'Pagini de aterizare', href: '#services' }, { label: 'Site-uri corporative', href: '#services' }, { label: 'Magazine online', href: '#services' }, { label: 'Redesign', href: '#services' }, { label: 'SEO', href: '#services' }] },
+      { title: 'Servicii', links: [{ label: 'Pagini de aterizare', href: '#services' }, { label: 'Site-uri corporative', href: '#services' }, { label: 'Redesign', href: '#services' }, { label: 'SEO', href: '#services' }] },
       { title: 'Companie', links: [{ label: 'Portofoliu', href: '#portfolio' }, { label: 'Recenzii', href: '#reviews' }, { label: 'Prețuri', href: '#pricing' }, { label: 'FAQ', href: '#faq' }] },
       { title: 'Contact',  links: [{ label: 'hello@webstudio.ru', href: 'mailto:hello@webstudio.ru' }, { label: '+7 (000) 000-00-00', href: 'tel:+70000000000' }, { label: 'Telegram', href: '#' }, { label: 'WhatsApp', href: '#' }] },
     ],
