@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuildCore — Construction Company</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:     #f5f4f1;
+  --dark:   #1a1a14;
+  --yellow: #f5a800;
+  --yellow2:#ffbd2e;
+  --muted:  #6b6b58;
+  --card:   #ffffff;
+  --border: rgba(26,26,20,.1);
+  --shadow: 0 8px 32px rgba(26,26,20,.12);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--dark); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a14 0%, #2e2a1a 60%, #1a1a14 100%);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 30px,
+    rgba(245,168,0,.03) 30px, rgba(245,168,0,.03) 31px
+  );
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(245,168,0,.12); border: 1px solid rgba(245,168,0,.3);
+  color: var(--yellow2); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 4px; margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5.5vw, 56px); color: #fff; font-weight: 900;
+  line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 14px; text-transform: uppercase;
+}
+.hero h1 span { color: var(--yellow); }
+.hero p { color: rgba(255,255,255,.5); font-size: 14px; max-width: 420px; margin: 0 auto 28px; line-height: 1.7; }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--yellow); color: var(--dark); border: none;
+  padding: 13px 28px; border-radius: 4px; font-size: 14px; font-weight: 800;
+  cursor: pointer; text-transform: uppercase; letter-spacing: .5px;
+  transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: var(--yellow2); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.25);
+  padding: 13px 28px; border-radius: 4px; font-size: 14px; text-transform: uppercase; letter-spacing: .5px;
+  cursor: pointer; transition: background .2s;
+}
+.btn-outline:hover { background: rgba(255,255,255,.06); }
+
+/* STATS */
+.stats { display: flex; justify-content: center; background: var(--yellow); }
+.stat { padding: 16px 28px; text-align: center; border-right: 1px solid rgba(26,26,20,.15); flex: 1; max-width: 160px; }
+.stat:last-child { border-right: none; }
+.stat-val { font-size: 26px; font-weight: 900; color: var(--dark); }
+.stat-label { font-size: 10px; color: rgba(26,26,20,.6); letter-spacing: .5px; text-transform: uppercase; margin-top: 2px; }
+
+/* NAV */
+.nav-wrap {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,244,241,.97); backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--yellow);
+}
+.nav-tabs { display: flex; max-width: 880px; margin: 0 auto; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.tab {
+  padding: 14px 20px; font-size: 13px; color: var(--muted); font-weight: 600;
+  cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap;
+  background: none; border-top: none; border-left: none; border-right: none;
+  font-family: inherit; text-transform: uppercase; letter-spacing: .5px;
+  transition: color .2s, border-color .2s;
+}
+.tab:hover { color: var(--dark); }
+.tab.active { color: var(--dark); border-bottom-color: var(--yellow); }
+
+/* CONTENT */
+.content { max-width: 880px; margin: 0 auto; padding: 36px 16px 60px; }
+.section { display: none; }
+.section.visible { display: block; }
+
+/* SECTION HEADER */
+.sec-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--yellow); font-weight: 800; }
+.sec-title { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; margin-top: 6px; text-transform: uppercase; }
+.sec-sub { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.7; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 24px; }
+.svc-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+  padding: 24px 20px; border-left: 4px solid var(--yellow);
+  transition: box-shadow .25s, transform .25s;
+}
+.svc-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.svc-icon { font-size: 32px; margin-bottom: 14px; }
+.svc-name { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 8px; }
+.svc-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.svc-price { font-size: 13px; font-weight: 800; color: var(--yellow); }
+
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-top: 24px; }
+.project-card {
+  border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
+  transition: box-shadow .25s, transform .25s;
+}
+.project-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.project-img {
+  height: 160px; overflow: hidden; position: relative;
+}
+.project-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .4s ease;
+  display: block;
+}
+.project-card:hover .project-img img { transform: scale(1.06); }
+.project-img .img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,26,20,.55) 0%, transparent 60%);
+}
+.project-info { background: var(--card); padding: 16px; }
+.project-name { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 4px; }
+.project-meta { font-size: 12px; color: var(--muted); }
+.tag-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-top: 8px; background: rgba(245,168,0,.15); color: #b07a00; text-transform: uppercase; letter-spacing: .5px; }
+
+/* TEAM */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 24px; }
+.member-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+  padding: 22px 18px; text-align: center; transition: box-shadow .25s, transform .25s;
+}
+.member-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.member-avatar {
+  width: 64px; height: 64px; border-radius: 6px;
+  background: linear-gradient(135deg, #2e2a1a, #1a1a14);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 14px; border: 3px solid var(--yellow);
+}
+.member-name { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 4px; }
+.member-role { font-size: 12px; color: var(--yellow); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.member-exp { font-size: 12px; color: var(--muted); }
+
+/* CONTACTS */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 24px; }
+.contact-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 4px solid var(--yellow); border-radius: 6px;
+  padding: 20px 18px; display: flex; flex-direction: column; gap: 8px;
+}
+.contact-icon { font-size: 26px; }
+.contact-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; }
+.contact-val { font-size: 14px; font-weight: 700; }
+.cta-box {
+  margin-top: 28px; background: var(--dark); border-radius: 6px;
+  padding: 28px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.cta-text h3 { color: #fff; font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: -.3px; }
+.cta-text p { color: rgba(255,255,255,.45); font-size: 13px; margin-top: 4px; }
+.cta-btn {
+  background: var(--yellow); color: var(--dark); border: none;
+  padding: 13px 28px; border-radius: 4px; font-size: 13px; font-weight: 800;
+  cursor: pointer; text-transform: uppercase; letter-spacing: .5px; white-space: nowrap;
+  transition: background .2s;
+}
+.cta-btn:hover { background: var(--yellow2); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-badge">⚙️ Building Since 2005</div>
+  <h1>Build<span>Core</span><br>Construction</h1>
+  <p>Commercial & industrial construction. On time, on budget — every project, every time.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="showTab('contacts')">Get a Quote</button>
+    <button class="btn-outline" onclick="showTab('projects')">Our Projects</button>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="stat-val">340+</div><div class="stat-label">Projects Built</div></div>
+  <div class="stat"><div class="stat-val">19yr</div><div class="stat-label">On the Market</div></div>
+  <div class="stat"><div class="stat-val">97%</div><div class="stat-label">On-Time Delivery</div></div>
+  <div class="stat"><div class="stat-val">85</div><div class="stat-label">Specialists</div></div>
+</div>
+
+<nav class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="tab active" data-sec="services">Services</button>
+    <button class="tab" data-sec="projects">Projects</button>
+    <button class="tab" data-sec="team">Team</button>
+    <button class="tab" data-sec="contacts">Contacts</button>
+  </div>
+</nav>
+
+<main class="content">
+
+  <!-- SERVICES -->
+  <section class="section visible" id="sec-services">
+    <div class="sec-tag">What We Build</div>
+    <h2 class="sec-title">Our Services</h2>
+    <p class="sec-sub">Full construction cycle — from site survey and design to fit-out and handover.</p>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon">🏗️</div><div class="svc-name">General Construction</div><div class="svc-desc">Commercial, industrial and residential builds from ground up.</div><div class="svc-price">from $80/m²</div></div>
+      <div class="svc-card"><div class="svc-icon">🏢</div><div class="svc-name">Office Fit-out</div><div class="svc-desc">Turnkey office interior — design, partitions, MEP, finishes.</div><div class="svc-price">from $120/m²</div></div>
+      <div class="svc-card"><div class="svc-icon">🔩</div><div class="svc-name">Steel Structures</div><div class="svc-desc">Fabrication and erection of steel frames, warehouses and hangars.</div><div class="svc-price">from $60/m²</div></div>
+      <div class="svc-card"><div class="svc-icon">🏠</div><div class="svc-name">Renovation</div><div class="svc-desc">Full-scope refurbishment — structural, facade, interiors.</div><div class="svc-price">from $50/m²</div></div>
+      <div class="svc-card"><div class="svc-icon">🌿</div><div class="svc-name">Landscaping</div><div class="svc-desc">Site preparation, drainage, paving, planting and lighting.</div><div class="svc-price">from $30/m²</div></div>
+      <div class="svc-card"><div class="svc-icon">📐</div><div class="svc-name">Design & BIM</div><div class="svc-desc">Architectural and structural design, BIM modelling, permits.</div><div class="svc-price">from $15/m²</div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="sec-projects">
+    <div class="sec-tag">Portfolio</div>
+    <h2 class="sec-title">Completed Projects</h2>
+    <p class="sec-sub">Selected works across commercial, industrial and civic sectors.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img"><img src="metro.jpg" alt="Metro Business Centre"><div class="img-overlay"></div></div>
+        <div class="project-info"><div class="project-name">Metro Business Centre</div><div class="project-meta">12 000 m² · 2024</div><span class="tag-badge">Commercial</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="warehouse.jpg" alt="GreenPark Warehouse"><div class="img-overlay"></div></div>
+        <div class="project-info"><div class="project-name">GreenPark Warehouse</div><div class="project-meta">8 500 m² · 2024</div><span class="tag-badge">Industrial</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="stadium.jpg" alt="City Sports Arena"><div class="img-overlay"></div></div>
+        <div class="project-info"><div class="project-name">City Sports Arena</div><div class="project-meta">22 000 m² · 2023</div><span class="tag-badge">Civic</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="hotel.jpg" alt="Riverfront Hotel"><div class="img-overlay"></div></div>
+        <div class="project-info"><div class="project-name">Riverfront Hotel</div><div class="project-meta">6 200 m² · 2023</div><span class="tag-badge">Hospitality</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="sec-team">
+    <div class="sec-tag">The People</div>
+    <h2 class="sec-title">Leadership Team</h2>
+    <p class="sec-sub">Experienced engineers and project managers who deliver results.</p>
+    <div class="team-grid">
+      <div class="member-card"><div class="member-avatar">👷</div><div class="member-name">James Holt</div><div class="member-role">CEO & Founder</div><div class="member-exp">24 yrs in construction</div></div>
+      <div class="member-card"><div class="member-avatar">👩‍💼</div><div class="member-name">Linda Marsh</div><div class="member-role">Head of Projects</div><div class="member-exp">16 yrs · PMP certified</div></div>
+      <div class="member-card"><div class="member-avatar">👨‍🔧</div><div class="member-name">Victor Cruz</div><div class="member-role">Chief Engineer</div><div class="member-exp">19 yrs · Structural</div></div>
+      <div class="member-card"><div class="member-avatar">👩‍🎨</div><div class="member-name">Anna Selby</div><div class="member-role">Lead Architect</div><div class="member-exp">12 yrs · BIM specialist</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section" id="sec-contacts">
+    <div class="sec-tag">Reach Us</div>
+    <h2 class="sec-title">Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="contact-icon">📍</div><div class="contact-label">Office</div><div class="contact-val">88 Industrial Blvd, Suite 4</div></div>
+      <div class="contact-card"><div class="contact-icon">📞</div><div class="contact-label">Phone</div><div class="contact-val">+1 (555) 800-3300</div></div>
+      <div class="contact-card"><div class="contact-icon">✉️</div><div class="contact-label">Email</div><div class="contact-val">info@buildcore.com</div></div>
+      <div class="contact-card"><div class="contact-icon">🕐</div><div class="contact-label">Hours</div><div class="contact-val">Mon–Fri 08:00–18:00</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-text">
+        <h3>Ready to start your project?</h3>
+        <p>Send us a brief — we'll respond within 24 hours with a free estimate.</p>
+      </div>
+      <button class="cta-btn">📋 Request a Quote</button>
+    </div>
+  </section>
+
+</main>
+
+<footer style="background:#1a1a14;text-align:center;padding:24px;color:rgba(255,255,255,.35);font-size:12px;">
+  © 2026 <span style="color:#f5a800;font-weight:700">BuildCore Construction</span> · Licensed & Insured · All rights reserved.
+</footer>
+
+<script>
+function showTab(sec) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  const tab = document.querySelector(`[data-sec="${sec}"]`);
+  if (tab) tab.classList.add('active');
+  const section = document.getElementById('sec-' + sec);
+  if (section) section.classList.add('visible');
+}
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => showTab(tab.dataset.sec));
+});
+</script>
+</body>
+</html>

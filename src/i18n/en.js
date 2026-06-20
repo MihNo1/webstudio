@@ -48,9 +48,9 @@ export default {
     title: 'Our Work',
     sub: 'Examples of completed projects across different niches and goals.',
     items: [
-      { title: 'Clinic Landing Page',           category: 'Healthcare', bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
-      { title: 'Construction Company Website',   category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
-      { title: 'Restaurant Website with Menu',   category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
+      { title: 'Zoo Clinic Landing Page',          category: 'Healthcare', bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
+      { title: 'Construction Company Website',    category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
+      { title: 'Restaurant Website with Menu',    category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],
   },
   testimonials: {

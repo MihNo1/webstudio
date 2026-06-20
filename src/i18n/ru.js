@@ -48,7 +48,7 @@ export default {
     title: 'Наши работы',
     sub: 'Примеры реализованных проектов для разных ниш и задач.',
     items: [
-      { title: 'Лендинг для клиники',        category: 'Медицина',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
+      { title: 'Лендинг зоо-клиники',         category: 'Медицина',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
       { title: 'Сайт строительной компании',  category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
       { title: 'Ресторанный сайт с меню',     category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],

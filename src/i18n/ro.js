@@ -48,7 +48,7 @@ export default {
     title: 'Lucrările noastre',
     sub: 'Exemple de proiecte realizate pentru diferite nișe și obiective.',
     items: [
-      { title: 'Pagină de aterizare clinică',  category: 'Medicină',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
+      { title: 'Pagină de aterizare zoo-clinică', category: 'Medicină',   bg: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
       { title: 'Site companie de construcții',  category: 'B2B',        bg: 'linear-gradient(135deg,#1b4332,#081c15)' },
       { title: 'Site restaurant cu meniu',      category: 'HoReCa',     bg: 'linear-gradient(135deg,#3d0c02,#c1440e)' },
     ],
