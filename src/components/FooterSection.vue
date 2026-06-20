@@ -17,7 +17,7 @@
       </div>
       <div class="bottom">
         <p>{{ t('footer.copyright') }}</p>
-        <a href="#">{{ t('footer.privacy') }}</a>
+        <a href="/privacy/index.html">{{ t('footer.privacy') }}</a>
       </div>
     </div>
   </footer>

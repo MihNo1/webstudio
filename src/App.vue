@@ -7,7 +7,6 @@
     <ProcessSection />
     <PortfolioSection />
     <TestimonialsSection />
-    <PricingSection />
     <FaqSection />
     <CtaSection />
   </main>
@@ -23,7 +22,6 @@ import ServicesSection from './components/ServicesSection.vue'
 import ProcessSection from './components/ProcessSection.vue'
 import PortfolioSection from './components/PortfolioSection.vue'
 import TestimonialsSection from './components/TestimonialsSection.vue'
-import PricingSection from './components/PricingSection.vue'
 import FaqSection from './components/FaqSection.vue'
 import CtaSection from './components/CtaSection.vue'
 import FooterSection from './components/FooterSection.vue'

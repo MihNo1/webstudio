@@ -3,7 +3,6 @@ export default {
     services: 'Servicii',
     process: 'Proces',
     portfolio: 'Portofoliu',
-    pricing: 'Prețuri',
     faq: 'FAQ',
     cta: 'Lasă o cerere',
   },
@@ -93,7 +92,7 @@ export default {
     tagline: 'Creăm site-uri care rezolvă problemele de afaceri. Rapid, calitativ, cu rezultat garantat.',
     columns: [
       { title: 'Servicii', links: [{ label: 'Pagini de aterizare', href: '#services' }, { label: 'Site-uri corporative', href: '#services' }, { label: 'Redesign', href: '#services' }, { label: 'SEO', href: '#services' }] },
-      { title: 'Companie', links: [{ label: 'Portofoliu', href: '#portfolio' }, { label: 'Recenzii', href: '#reviews' }, { label: 'Prețuri', href: '#pricing' }, { label: 'FAQ', href: '#faq' }] },
+      { title: 'Companie', links: [{ label: 'Portofoliu', href: '#portfolio' }, { label: 'Recenzii', href: '#reviews' }, { label: 'FAQ', href: '#faq' }] },
       { title: 'Contact',  links: [{ label: 'hello@webstudio.ru', href: 'mailto:hello@webstudio.ru' }, { label: '+7 (000) 000-00-00', href: 'tel:+70000000000' }, { label: 'Telegram', href: '#' }, { label: 'WhatsApp', href: '#' }] },
     ],
     copyright: '© 2026 WebStudio. Toate drepturile rezervate.',

@@ -11,7 +11,6 @@
           <div class="icon">{{ s.icon }}</div>
           <h3>{{ s.title }}</h3>
           <p>{{ s.desc }}</p>
-          <div class="price">{{ s.price }}</div>
         </div>
       </div>
     </div>
@@ -37,7 +36,6 @@ section { background: var(--bg); }
 .icon { width: 52px; height: 52px; border-radius: 14px; font-size: 24px; margin-bottom: 24px; background: linear-gradient(135deg,rgba(0,113,227,.12),rgba(0,113,227,.06)); border: 1px solid rgba(0,113,227,.1); display: flex; align-items: center; justify-content: center; }
 h3 { font-family: var(--font-d); font-size: 22px; font-weight: 700; letter-spacing: -.5px; margin-bottom: 10px; }
 p { font-size: 15px; color: var(--muted); line-height: 1.6; }
-.price { margin-top: 20px; font-size: 14px; color: var(--accent); font-weight: 600; }
 
 @media (max-width: 1024px) {
   .grid { grid-template-columns: repeat(4,1fr); }

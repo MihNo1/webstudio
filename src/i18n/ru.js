@@ -3,7 +3,6 @@ export default {
     services: 'Услуги',
     process: 'Процесс',
     portfolio: 'Работы',
-    pricing: 'Цены',
     faq: 'FAQ',
     cta: 'Оставить заявку',
   },
@@ -93,7 +92,7 @@ export default {
     tagline: 'Разрабатываем сайты, которые решают бизнес-задачи. Быстро, качественно, с гарантией результата.',
     columns: [
       { title: 'Услуги',   links: [{ label: 'Лендинги', href: '#services' }, { label: 'Корпоративные сайты', href: '#services' }, { label: 'Редизайн', href: '#services' }, { label: 'SEO', href: '#services' }] },
-      { title: 'Компания', links: [{ label: 'Портфолио', href: '#portfolio' }, { label: 'Отзывы', href: '#reviews' }, { label: 'Цены', href: '#pricing' }, { label: 'FAQ', href: '#faq' }] },
+      { title: 'Компания', links: [{ label: 'Портфолио', href: '#portfolio' }, { label: 'Отзывы', href: '#reviews' }, { label: 'FAQ', href: '#faq' }] },
       { title: 'Контакты', links: [{ label: 'hello@webstudio.ru', href: 'mailto:hello@webstudio.ru' }, { label: '+7 (000) 000-00-00', href: 'tel:+70000000000' }, { label: 'Telegram', href: '#' }, { label: 'WhatsApp', href: '#' }] },
     ],
     copyright: '© 2026 WebStudio. Все права защищены.',

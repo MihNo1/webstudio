@@ -5,7 +5,6 @@
       <li><a href="#services">{{ t('nav.services') }}</a></li>
       <li><a href="#process">{{ t('nav.process') }}</a></li>
       <li><a href="#portfolio">{{ t('nav.portfolio') }}</a></li>
-      <li><a href="#pricing">{{ t('nav.pricing') }}</a></li>
       <li><a href="#faq">{{ t('nav.faq') }}</a></li>
     </ul>
     <div class="nav-right">
@@ -33,7 +32,6 @@
     <a href="#services"  @click="closeMobile">{{ t('nav.services') }}</a>
     <a href="#process"   @click="closeMobile">{{ t('nav.process') }}</a>
     <a href="#portfolio" @click="closeMobile">{{ t('nav.portfolio') }}</a>
-    <a href="#pricing"   @click="closeMobile">{{ t('nav.pricing') }}</a>
     <a href="#faq"       @click="closeMobile">{{ t('nav.faq') }}</a>
     <button class="mobile-cta" @click="openModal(); closeMobile()">{{ t('nav.cta') }}</button>
   </div>
